@@ -17,12 +17,11 @@ const db = getDatabase(app);
 const temperaturaElemento = document.getElementById("temperatura");
 const umidadeElemento = document.getElementById("umidade");
 
-// Função para buscar os dados do Firebase em tempo real
 function obterDadosSensores() {
     const temperaturaRef = ref(db, "sensor/temperatura");
     const umidadeRef = ref(db, "sensor/umidade");
 
-    // Atualiza a temperatura
+
     onValue(temperaturaRef, (snapshot) => {
         if (snapshot.exists()) {
             temperaturaElemento.innerText = `${snapshot.val()}°C`;
@@ -34,7 +33,6 @@ function obterDadosSensores() {
         temperaturaElemento.innerText = "Erro";
     });
 
-    // Atualiza a umidade
     onValue(umidadeRef, (snapshot) => {
         if (snapshot.exists()) {
             umidadeElemento.innerText = `${snapshot.val()}%`;
@@ -47,5 +45,4 @@ function obterDadosSensores() {
     });
 }
 
-// Inicia a busca dos dados
 obterDadosSensores();
