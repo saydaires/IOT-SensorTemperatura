@@ -1,0 +1,7 @@
+[project]
+name = "ESP32 MicroPython Example"
+description = "Projeto de exemplo para ESP32 com MicroPython no Wokwi."
+
+[build]
+board = "esp32"         
+framework = "micropython"   
