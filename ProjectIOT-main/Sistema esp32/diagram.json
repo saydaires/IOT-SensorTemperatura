@@ -1,36 +1,28 @@
 {
   "version": 1,
-  "author": "Anonymous maker",
+  "author": "Uri Shaked",
   "editor": "wokwi",
   "parts": [
-    {
-      "type": "board-esp32-devkit-c-v4",
-      "id": "esp",
-      "top": 0,
-      "left": 0,
-      "attrs": { "env": "micropython-20231227-v1.22.0" }
-    },
-    {
-      "type": "wokwi-led",
-      "id": "led1",
-      "top": -13.2,
-      "left": 167,
-      "attrs": { "color": "limegreen" }
-    },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -37.58, "left": -96.37, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -32.2, "left": 40.16, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 34.8, "left": 119, "attrs": { "color": "blue" } },
     {
       "type": "wokwi-resistor",
       "id": "r1",
-      "top": 71.15,
-      "left": 134.4,
+      "top": 109.55,
+      "left": 57.6,
       "attrs": { "value": "220" }
     }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
     [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "esp:21", "r1:1", "red", [ "h0" ] ],
-    [ "r1:2", "led1:A", "red", [ "v0" ] ],
-    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ]
+    [ "dht1:VCC", "esp:3V3", "red", [ "v109.3", "h-170.36", "v-200.78" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v99.7", "h-189.56", "v-66.38" ] ],
+    [ "dht1:SDA", "esp:4", "green", [ "v0" ] ],
+    [ "led1:C", "r1:2", "yellow", [ "v0" ] ],
+    [ "led1:A", "esp:GND.2", "black", [ "v86.4", "h-115.2", "v-172.8" ] ],
+    [ "esp:2", "r1:1", "yellow", [ "h0" ] ]
   ],
   "dependencies": {}
 }
