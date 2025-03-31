@@ -1,4 +1,4 @@
-/* Reset básico */
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body {
     color: white;
 }
 
-/* Centralizar o conteúdo */
+
 main {
     display: flex;
     flex-direction: column;
@@ -18,14 +18,14 @@ main {
     gap: 20px;
 }
 
-/* Container para cada sensor */
+
 .sensor-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Estilização dos títulos (nomes dos sensores) */
+
 .sensor-label {
     font-size: 24px;
     font-weight: bold;
@@ -42,7 +42,7 @@ main {
     font-family: 'Verdana', sans-serif;
 }
 
-/* Estilização do box dos valores */
+
 .sensor-box {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
